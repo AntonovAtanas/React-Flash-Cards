@@ -1,5 +1,5 @@
 import { useState } from "react";
-import questions from "../cards-db";
+import questions from "../cards-db/cards-db";
 import "./Card.css";
 
 const Card = () => {
@@ -21,7 +21,11 @@ const Card = () => {
           onClick={() => onSelectedCard(question.id)}
           className={clickedCardId === question.id ? "selected" : ""}
         >
-          <p>{clickedCardId === question.id ? question.answer : question.question }</p>
+          <p>
+            {clickedCardId === question.id
+              ? question.answer
+              : question.question}
+          </p>
         </div>
       ))}
     </div>
